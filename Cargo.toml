@@ -1,0 +1,18 @@
+[package]
+name = "delta-mre"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+datafusion = "34.0.0"
+tempfile = "3.9.0"
+tokio = { version = "1.35.1", features = ["full"] }
+url = "2.5.0"
+
+[dependencies.deltalake]
+path = "../delta-rs/crates/deltalake"
+# git = "https://github.com/delta-io/delta-rs.git"
+# rev = "8fec38a91de6c082daa70a5d27ab83f228af925e"
+features = ["s3", "gcs", "azure", "datafusion", "arrow"]
